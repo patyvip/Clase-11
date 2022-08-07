@@ -1,0 +1,12 @@
+{
+  "name": "trabajo-integrador---clase-11",
+  "version": "1.0.0",
+  "description": "Trabajo integrador correspondiente a la clase 11 del cursado de Desarrollo Web fullstack de Comunidad Icaro",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Facundo Martínez",
+  "license": "ISC"
+}

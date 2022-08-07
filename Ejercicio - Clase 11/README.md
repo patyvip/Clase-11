@@ -3,7 +3,7 @@ App.JS: Simple gestor de biblioteca por consola mediante JS
 Codificado para el curso de Desarrollo Web fullstack de la Comunidad Icaro 2022 por Facundo Martínez
 
 #Consideraciones previas:
--Disponer de un archivo JSON en el directorio principal (misma ruta que en app.js)
+-Disponer de un archivo JSON en el directorio principal (misma ruta que en app.js). En caso de no encontrar archivo la solución creará uno vacío. 
 
 #Comandos:
 -new (title, author, genre, year, cost, price) => Crea un nuevo libro en la base de datos JSON. Todos los parámetros son necesarios.

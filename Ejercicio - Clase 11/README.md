@@ -1,5 +1,5 @@
 
-###App.JS: Simple gestor de biblioteca por consola mediante JS
+### App.JS: Simple gestor de biblioteca por consola mediante JS
 Codificado para el curso de Desarrollo Web fullstack de la Comunidad Icaro 2022 por Facundo Martínez
 
 #Consideraciones previas:

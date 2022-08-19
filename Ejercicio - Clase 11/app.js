@@ -1,5 +1,12 @@
 const crud = require('./CRUD/crud.js');
 
+// Correción: está bien esta parte, lo unico a mirar es, la función "main()", es innecesaria, no está mal, pero no hace falta en este caso. El resto está perfecto.
+// Como consejo, podés usar otra estructura para los argumentos (que no crees una variable para cada argumento que recibe de la consola), por ejemplo podés usar un objeto.
+// Cuidado con los espacios, (mala indentación) podés usar Prettier o algun formateador de código.
+//
+// Muy buena la organización de carpetas y archivos, como adicional podés poner el pdf en una carpeta llamada "resources", "dev_resources", etc..
+// muy buena la organización de código.
+
 function main() {
     //Get enviroment constants/variables
     const command = process.argv[2];
@@ -33,4 +40,4 @@ function main() {
     }
 }
 //Run app
-main();
+main(); // Innecesario

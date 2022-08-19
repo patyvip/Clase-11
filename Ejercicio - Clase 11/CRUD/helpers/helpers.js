@@ -2,6 +2,10 @@ const fs = require('fs');
 const path = require('path');
 const pathDB = path.resolve(__dirname, "../../books.json");
 
+// Ojo que aca tenés un problema que es muy común: RangeError: Maximum call stack size exceeded, con la funciones podés generar un bucle infinito similar al de un loop,
+// En este caso tenés un bucle infinito dado a que no parás de llamar a dos funciones.
+// Chequeá línea 25 y línea 20, si el parametro bookId no es nulo en readBooks, va a llamar a la otra función que es findBook, y findBook llama a readBooks de vuelta y así sucesivamente. Ojo con eso.
+
 function readBooks(bookId=null) {
     let books;
     //Try to read ddbb
@@ -22,7 +26,10 @@ function findBook(bookId) {
     //Return false if books reading fault
     if (books == -1 || !books) return false;
     //Find id match
-    const book = books.find(obj => obj.id == bookId);
+    
+    const book = books.find(obj => obj.id == bookId); // Fijate como funciona .find() y que es lo que devuelve en cada caso, (es una función y devuelve algo), si no encuentra lo que busca devuelve undefined.
+    // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/find
+    
     //Return the book if exist, else return false
     return book === undefined || book === null ? false:book;
 }
@@ -58,6 +65,7 @@ function writeBook(book) {
 }
 
 function writeBooks(booksArray) {
+    // Acá podrías reutilizar la anterior función "writeBook"
     //Parse array to JSON data 
     booksArray = JSON.stringify(booksArray, null, 2);
     //Try to write the ddbb
@@ -117,6 +125,7 @@ function createRandomId(maxLenght) {
     return parseInt(uid.toString().slice(-maxLenght));
 }
 
+// Ojo el camel case acá, en el nombre de esta función
 function InitializeJsonDB() {
     let databaseExists = fs.existsSync(pathDB);
     if (!databaseExists) {
@@ -129,5 +138,6 @@ function InitializeJsonDB() {
     return 0;
 }
 
-InitializeJsonDB();
+InitializeJsonDB(); // Ojo con el camel case.
+// https://es.wikipedia.org/wiki/Camel_case
 module.exports = { readBooks, findBook, writeBook, updateBook, deleteBook, getLastIndex, createRandomId };
